@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiries</title>
+</head>
+<body>
+    <h1>Inquiries</h1>
+    <div id="inquiriesData"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Retrieve data from local storage
+            var inquiriesData = JSON.parse(localStorage.getItem('inquiryFormData'));
+
+            // Display data on the page
+            if (inquiriesData) {
+                $('#inquiriesData').html('<pre>' + JSON.stringify(inquiriesData, null, 2) + '</pre>');
+            } else {
+                $('#inquiriesData').html('<p>No inquiries data found in local storage.</p>');
+            }
+        });
+    </script>
+</body>
+</html>

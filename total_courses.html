@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Total Courses</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="courses_styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-3d"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-4 mb-3">Total Courses</h1>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-laptop-code"></i> Computer Science</h5>
+            <p class="card-text"><i class="fas fa-id-badge"></i> Course Code: CSE101</p>
+            <p class="card-text"><i class="fas fa-chalkboard"></i> Department: Computer Science</p>
+            <p class="card-text"><i class="fas fa-clock"></i> Duration: 4 Years</p>
+          </div>
+          <div class="card-footer">
+            <canvas id="computerSciencePlacementChart" width="200" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-bolt"></i> Electrical Engineering</h5>
+            <p class="card-text"><i class="fas fa-id-badge"></i> Course Code: EE101</p>
+            <p class="card-text"><i class="fas fa-chalkboard"></i> Department: Electrical Engineering</p>
+            <p class="card-text"><i class="fas fa-clock"></i> Duration: 4 Years</p>
+          </div>
+          <div class="card-footer">
+            <canvas id="electricalEngineeringPlacementChart" width="200" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-laptop"></i> Information Technology</h5>
+            <p class="card-text"><i class="fas fa-id-badge"></i> Course Code: IT101</p>
+            <p class="card-text"><i class="fas fa-chalkboard"></i> Department: Information Technology</p>
+            <p class="card-text"><i class="fas fa-clock"></i> Duration: 4 Years</p>
+          </div>
+          <div class="card-footer">
+            <canvas id="informationTechnologyPlacementChart" width="200" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- Add more cards here -->
+    </div>
+    
+    <div class="alert alert-info mt-4" role="alert">
+      Note: The duration mentioned is the standard duration of the course.
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+  <script>
+    // Chart data
+    const computerSciencePlacementChartData = {
+      labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+      datasets: [{
+        label: 'Placements',
+        data: [30, 40, 50, 45, 60, 55],
+        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    const electricalEngineeringPlacementChartData = {
+      labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+      datasets: [{
+        label: 'Placements',
+        data: [25, 35, 40, 50, 55, 60],
+        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    const informationTechnologyPlacementChartData = {
+      labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+      datasets: [{
+        label: 'Placements',
+        data: [20, 30, 35, 40, 45, 50],
+        backgroundColor: 'rgba(255, 206, 86, 0.6)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    // Chart configuration
+    const chartConfig = {
+      type: 'line',
+      data: null,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          chart3d: {
+            enabled: true,
+            alpha: 45,
+            beta: 0
+          }
+        }
+      }
+    };
+
+    // Initialize charts
+    const computerSciencePlacementChartCtx = document.getElementById('computerSciencePlacementChart').getContext('2d');
+    chartConfig.data = computerSciencePlacementChartData;
+    new Chart(computerSciencePlacementChartCtx, chartConfig);
+
+    const electricalEngineeringPlacementChartCtx = document.getElementById('electricalEngineeringPlacementChart').getContext('2d');
+    chartConfig.data = electricalEngineeringPlacementChartData;
+    new Chart(electricalEngineeringPlacementChartCtx, chartConfig);
+
+    const informationTechnologyPlacementChartCtx = document.getElementById('informationTechnologyPlacementChart').getContext('2d');
+    chartConfig.data = informationTechnologyPlacementChartData;
+    new Chart(informationTechnologyPlacementChartCtx, chartConfig);
+  </script>
+</body>
+</html>

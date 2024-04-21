@@ -1,0 +1,63 @@
+/* Custom CSS for Bharti Vidhyapeeth Admin Dashboard */
+
+/* Style for the container */
+.container-fluid {
+  display: flex;
+}
+
+/* Style for the sidebar */
+#sidebar {
+  flex: 0 0 240px; /* Width of the sidebar */
+  height: 100vh;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #007bff; /* Change the background color as needed */
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+  border-top-right-radius: 20px; /* Rounded corners */
+  border-bottom-right-radius: 20px; /* Rounded corners */
+}
+
+/* Style for the content area */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Style for cards */
+.card {
+  transition: transform 0.3s ease;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Style for card description */
+.card-description {
+  display: none;
+}
+
+.card:hover .card-description {
+  display: block;
+  color: #333;
+}
+
+/* Style for navigation links */
+.nav-link {
+  color: white !important;
+}
+
+/* Style for tables */
+table {
+  width: 100%;
+}
+
+thead {
+  background-color: #f8f9fa;
+}
+
+/* Additional styling can be added as needed */
+
